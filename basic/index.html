@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
+  </head>
+
+  <body>
+    <div id="root" v-on:mousemove="updateCoordinates">
+      <h1 v-once>{{ title }}</h1>
+      <p>{{ sayHello() }}</p>
+      <a v-bind:href="link">Google</a>
+
+      <p v-html="finishedLink"></p>
+
+      <button v-on:click="increaseCounter( 4 )">Click Me!</button>
+      <p>{{ counter }}</p>
+
+      <p v-on:mousemove.stop="">Coordinates: {{ x }} / {{ y }}</p>
+
+      <input type="text" v-on:keyup.enter.space="alertMe" />
+
+      <input type="text" v-model="vuemodel" />
+      {{ vuemodel }}
+
+      <h1>Computed Properties</h1>
+      <button v-on:click="counter++">+1</button>
+      <button v-on:click="counter--">-1</button>
+      <p>{{ counter }}</p>
+      <p>{{ output }}</p>
+
+      <h1>Watched Properties</h1>
+      <p>{{ watch_output }}</p>
+
+      <h1>Vue Shorthands</h1>
+      <p>You can use @ instead of v-on:</p>
+      <p>You can use :attribute instead of v-bind:attribute</p>
+
+      <h1>Vue with CSS</h1>
+      <div class="demo" 
+           @click="attachRed = !attachRed"
+           :class="redClass">
+      </div>
+      <div class="demo"
+           @click="attachGreen = !attachGreen"
+           :class="greenClass">
+      </div>
+      <div class="demo"
+           @click="attachBlue = !attachBlue"
+           :class="blueClass">
+      </div>
+      <br />
+      <button @click="attachAll">All On</button>
+      <button @click="detachAll">All Off</button>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

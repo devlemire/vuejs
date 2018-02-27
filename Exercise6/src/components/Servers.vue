@@ -36,4 +36,13 @@
   .offline {
     color: red;
   }
+
+  b {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  li {
+    cursor: default;
+  }
 </style>
